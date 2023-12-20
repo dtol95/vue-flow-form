@@ -28,6 +28,7 @@
     }
   },
   "dependencies": {
+    "@formkit/auto-animate": "^0.8.1",
     "vue-textarea-autosize": "^1.1.1",
     "vue-the-mask": "^0.11.1"
   },
