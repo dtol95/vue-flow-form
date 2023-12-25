@@ -71,7 +71,6 @@
   import LanguageModel from '../../src/models/LanguageModel'
   // If using the npm package, use the following line instead of the ones above.
   // import FlowForm, { QuestionModel, QuestionType, ChoiceOption, LanguageModel } from '@ditdot-dev/vue-flow-form'
-
   export default {
     name: 'example',
     components: {
@@ -82,25 +81,32 @@
         submitted: false,
         completed: false,
         score: 0, 
-        total: 8, 
+        total: 15, 
         time: 0,
         formattedTime: '',
         answers: {
-          html_1: '2', 
-          html_2: '2',
-          html_3: '2', 
-          html_4: '2',
-          ux_1: '2',
-          ux_2: '2',
-          ux_3: '2',
-          ux_4: '2',
+          html_1: '3', // Founder of Royal Training Maps 
+          html_2: '4', // Most likely your ex favorite Royal YouTuber 
+          html_3: '2', // A legend of Royal Tutorials 
+          html_4: '1', // Founder of Royal Training Maps 
+          html_5: '2', // Raced to be the first gold crown 
+          html_6: '3', // Team that won SR most of the times 
+          html_7: '2', // Player who failed his own map and didn't qualify for his team during RNC 3 
+          html_8: '4', // Event that never existed in Royal 
+          html_9: '3', // Person who owes most of the records on Royal maps 
+          html_10: '1', // The leading country in the number of records 
+          html_11: '4', // Winner of one and only lucky Clover royal championship 
+          html_12: '1', // Which team had won RNC 
+          html_13: '4', // Creator of Royal Rumble competition 
+          html_14: '2', // Royal mapper of the 2022 year 
+          html_15: '3', // Royal photographer 
         },
         language: new LanguageModel(),
         // Create question list with QuestionModel instances
         questions: [      
           new QuestionModel({
             id: 'start',
-            tagline: '8 questions',
+            tagline: '15 questions',
             title: 'How much do you know about Royal?',
             content: 'Test how well you know Royal history in the first quiz section.',
             type: QuestionType.SectionBreak,
@@ -115,97 +121,383 @@
             multiple: false,
             options: [
               new ChoiceOption({
-                label: 'Intellectrick', 
+                label: 'Intellectrick',
                 value: '1'
               }),
               new ChoiceOption({
-                label: 'Clloverr', 
+                label: 'Clover',
                 value: '2'
-               }),
+              }),
               new ChoiceOption({
-                label: 'Schwabba', 
+                label: 'Schwabba ',
                 value: '3'
-              }), 
+              }),
               new ChoiceOption({
-                label: 'Maverick', 
+                label: 'Maverick',
                 value: '4'
               })
             ]
           }),
           new QuestionModel({
             id: 'html_2',
-            title: 'First player to get Master crown?',
-            helpText: 'Master Crown = 1000 Wins',
+            title: 'Most likely your ex favorite Royal YouTuber?',
+            helpText: '',
             type: QuestionType.MultipleChoice,
             required: true,
             multiple: false,
             options: [
               new ChoiceOption({
-                label: 'Intellectrick', 
+                label: 'Raway',
                 value: '1'
               }),
               new ChoiceOption({
-                label: 'Clloverr', 
+                label: 'RafTor',
                 value: '2'
-               }),
+              }),
               new ChoiceOption({
-                label: 'Schwabba', 
+                label: 'Chriso',
                 value: '3'
-              }), 
+              }),
               new ChoiceOption({
-                label: 'Maverick', 
+                label: 'Intellectrick ',
                 value: '4'
               })
             ]
           }),
           new QuestionModel({
             id: 'html_3',
-            title: 'First player to get Master crown?',
-            helpText: 'Master Crown = 1000 Wins',
+            title: 'A legend of Royal Tutorials?',
+            helpText: '',
             type: QuestionType.MultipleChoice,
             required: true,
             multiple: false,
             options: [
               new ChoiceOption({
-                label: 'Intellectrick', 
+                label: 'Maverick',
                 value: '1'
               }),
               new ChoiceOption({
-                label: 'Clloverr', 
+                label: 'Chriso ',
                 value: '2'
-               }),
+              }),
               new ChoiceOption({
-                label: 'Schwabba', 
+                label: 'Intellectrick',
                 value: '3'
-              }), 
+              }),
               new ChoiceOption({
-                label: 'Maverick', 
+                label: 'Wirtual',
                 value: '4'
               })
             ]
           }),
           new QuestionModel({
             id: 'html_4',
-            title: 'First player to get Master crown?',
-            helpText: 'Master Crown = 1000 Wins',
+            title: 'Founder of Royal Training Maps?',
+            helpText: '',
             type: QuestionType.MultipleChoice,
             required: true,
             multiple: false,
             options: [
               new ChoiceOption({
-                label: 'Intellectrick', 
+                label: 'Maverick ',
                 value: '1'
               }),
               new ChoiceOption({
-                label: 'Clloverr', 
+                label: 'Intellectrick',
                 value: '2'
-               }),
+              }),
               new ChoiceOption({
-                label: 'Schwabba', 
+                label: 'Dam_TM',
                 value: '3'
-              }), 
+              }),
               new ChoiceOption({
-                label: 'Maverick', 
+                label: 'Warl_TM',
+                value: '4'
+              })
+            ]
+          }),
+          new QuestionModel({
+            id: 'html_5',
+            title: 'Raced to be the first gold crown?',
+            helpText: '',
+            type: QuestionType.MultipleChoice,
+            required: true,
+            multiple: false,
+            options: [
+              new ChoiceOption({
+                label: 'Schwabba',
+                value: '1'
+              }),
+              new ChoiceOption({
+                label: 'Nsgr ',
+                value: '2'
+              }),
+              new ChoiceOption({
+                label: 'Wirtual',
+                value: '3'
+              }),
+              new ChoiceOption({
+                label: 'Intellectrick',
+                value: '4'
+              })
+            ]
+          }),
+          new QuestionModel({
+            id: 'html_6',
+            title: 'Team that won SR most of the times?',
+            helpText: '',
+            type: QuestionType.MultipleChoice,
+            required: true,
+            multiple: false,
+            options: [
+              new ChoiceOption({
+                label: 'Dog/Trasher/Surgetale',
+                value: '1'
+              }),
+              new ChoiceOption({
+                label: 'Dam/Warl/Tchak',
+                value: '2'
+              }),
+              new ChoiceOption({
+                label: 'Intellectrick/Clover/Youpi ',
+                value: '3'
+              }),
+              new ChoiceOption({
+                label: 'Moonub/Chriso/Kickz',
+                value: '4'
+              })
+            ]
+          }),
+          new QuestionModel({
+            id: 'html_7',
+            title: 'Player who failed his own map and didn\'t qualify for his team during RNC 3?',
+            helpText: '',
+            type: QuestionType.MultipleChoice,
+            required: true,
+            multiple: false,
+            options: [
+              new ChoiceOption({
+                label: 'Maverick',
+                value: '1'
+              }),
+              new ChoiceOption({
+                label: 'Clover ',
+                value: '2'
+              }),
+              new ChoiceOption({
+                label: 'RafTor',
+                value: '3'
+              }),
+              new ChoiceOption({
+                label: 'SnappieTM',
+                value: '4'
+              })
+            ]
+          }),
+          new QuestionModel({
+            id: 'html_8',
+            title: 'Event that never existed in Royal?',
+            helpText: '',
+            type: QuestionType.MultipleChoice,
+            required: true,
+            multiple: false,
+            options: [
+              new ChoiceOption({
+                label: 'ROTD',
+                value: '1'
+              }),
+              new ChoiceOption({
+                label: 'RNC',
+                value: '2'
+              }),
+              new ChoiceOption({
+                label: 'RR',
+                value: '3'
+              }),
+              new ChoiceOption({
+                label: 'Snipe Me Friday ',
+                value: '4'
+              })
+            ]
+          }),
+          new QuestionModel({
+            id: 'html_9',
+            title: 'Person who owes most of the records on Royal maps?',
+            helpText: '',
+            type: QuestionType.MultipleChoice,
+            required: true,
+            multiple: false,
+            options: [
+              new ChoiceOption({
+                label: 'Warl_TM',
+                value: '1'
+              }),
+              new ChoiceOption({
+                label: 'Dog..',
+                value: '2'
+              }),
+              new ChoiceOption({
+                label: 'Dam_TM ',
+                value: '3'
+              }),
+              new ChoiceOption({
+                label: 'mtat_tm',
+                value: '4'
+              })
+            ]
+          }),
+          new QuestionModel({
+            id: 'html_10',
+            title: 'The leading country in the number of records?',
+            helpText: '',
+            type: QuestionType.MultipleChoice,
+            required: true,
+            multiple: false,
+            options: [
+              new ChoiceOption({
+                label: 'Germany ',
+                value: '1'
+              }),
+              new ChoiceOption({
+                label: 'France',
+                value: '2'
+              }),
+              new ChoiceOption({
+                label: 'Brazil',
+                value: '3'
+              }),
+              new ChoiceOption({
+                label: 'USA',
+                value: '4'
+              })
+            ]
+          }),
+          new QuestionModel({
+            id: 'html_11',
+            title: 'Winner of one and only lucky Clover royal championship?',
+            helpText: '',
+            type: QuestionType.MultipleChoice,
+            required: true,
+            multiple: false,
+            options: [
+              new ChoiceOption({
+                label: 'Raftor',
+                value: '1'
+              }),
+              new ChoiceOption({
+                label: 'Dog..',
+                value: '2'
+              }),
+              new ChoiceOption({
+                label: 'Trasher712',
+                value: '3'
+              }),
+              new ChoiceOption({
+                label: 'Doinksallday ',
+                value: '4'
+              })
+            ]
+          }),
+          new QuestionModel({
+            id: 'html_12',
+            title: 'Which team had won RNC?',
+            helpText: '',
+            type: QuestionType.MultipleChoice,
+            required: true,
+            multiple: false,
+            options: [
+              new ChoiceOption({
+                label: 'World ',
+                value: '1'
+              }),
+              new ChoiceOption({
+                label: 'Germany',
+                value: '2'
+              }),
+              new ChoiceOption({
+                label: 'USA',
+                value: '3'
+              }),
+              new ChoiceOption({
+                label: 'Poland',
+                value: '4'
+              })
+            ]
+          }),
+          new QuestionModel({
+            id: 'html_13',
+            title: 'Creator of Royal Rumble competition?',
+            helpText: '',
+            type: QuestionType.MultipleChoice,
+            required: true,
+            multiple: false,
+            options: [
+              new ChoiceOption({
+                label: 'RafTor',
+                value: '1'
+              }),
+              new ChoiceOption({
+                label: 'Yungweeb',
+                value: '2'
+              }),
+              new ChoiceOption({
+                label: 'Clover',
+                value: '3'
+              }),
+              new ChoiceOption({
+                label: 'Rulemaker ',
+                value: '4'
+              })
+            ]
+          }),
+          new QuestionModel({
+            id: 'html_14',
+            title: 'Royal mapper of the 2022 year?',
+            helpText: '',
+            type: QuestionType.MultipleChoice,
+            required: true,
+            multiple: false,
+            options: [
+              new ChoiceOption({
+                label: 'Clover',
+                value: '1'
+              }),
+              new ChoiceOption({
+                label: 'Maverick ',
+                value: '2'
+              }),
+              new ChoiceOption({
+                label: 'Zzork',
+                value: '3'
+              }),
+              new ChoiceOption({
+                label: 'Blurious',
+                value: '4'
+              })
+            ]
+          }),
+          new QuestionModel({
+            id: 'html_15',
+            title: 'Royal photographer?',
+            helpText: '',
+            type: QuestionType.MultipleChoice,
+            required: true,
+            multiple: false,
+            options: [
+              new ChoiceOption({
+                label: 'Dam_TM',
+                value: '1'
+              }),
+              new ChoiceOption({
+                label: 'Kira',
+                value: '2'
+              }),
+              new ChoiceOption({
+                label: 'Warl_TM ',
+                value: '3'
+              }),
+              new ChoiceOption({
+                label: 'RafTor',
                 value: '4'
               })
             ]
@@ -214,110 +506,6 @@
             title: 'Excellent! You are halfway through.',
             content: 'Lets see how well you know your maps.',
             type: QuestionType.SectionBreak
-          }),
-          new QuestionModel({
-            id: 'ux_1',
-            title: 'First player to get Master crown?',
-            helpText: 'Master Crown = 1000 Wins',
-            type: QuestionType.MultipleChoice,
-            required: true,
-            multiple: false,
-            options: [
-              new ChoiceOption({
-                label: 'Intellectrick', 
-                value: '1'
-              }),
-              new ChoiceOption({
-                label: 'Clloverr', 
-                value: '2'
-               }),
-              new ChoiceOption({
-                label: 'Schwabba', 
-                value: '3'
-              }), 
-              new ChoiceOption({
-                label: 'Maverick', 
-                value: '4'
-              })
-            ]
-          }),
-          new QuestionModel({
-            id: 'ux_2',
-            title: 'First player to get Master crown?',
-            helpText: 'Master Crown = 1000 Wins',
-            type: QuestionType.MultipleChoice,
-            required: true,
-            multiple: false,
-            options: [
-              new ChoiceOption({
-                label: 'Intellectrick', 
-                value: '1'
-              }),
-              new ChoiceOption({
-                label: 'Clloverr', 
-                value: '2'
-               }),
-              new ChoiceOption({
-                label: 'Schwabba', 
-                value: '3'
-              }), 
-              new ChoiceOption({
-                label: 'Maverick', 
-                value: '4'
-              })
-            ]
-          }),
-          new QuestionModel({
-            id: 'ux_3',
-            title: 'First player to get Master crown?',
-            helpText: 'Master Crown = 1000 Wins',
-            type: QuestionType.MultipleChoice,
-            required: true,
-            multiple: false,
-            options: [
-              new ChoiceOption({
-                label: 'Intellectrick', 
-                value: '1'
-              }),
-              new ChoiceOption({
-                label: 'Clloverr', 
-                value: '2'
-               }),
-              new ChoiceOption({
-                label: 'Schwabba', 
-                value: '3'
-              }), 
-              new ChoiceOption({
-                label: 'Maverick', 
-                value: '4'
-              })
-            ]
-          }),
-          new QuestionModel({
-            id: 'ux_4',
-            title: 'First player to get Master crown?',
-            helpText: 'Master Crown = 1000 Wins',
-            type: QuestionType.MultipleChoice,
-            required: true,
-            multiple: false,
-            options: [
-              new ChoiceOption({
-                label: 'Intellectrick', 
-                value: '1'
-              }),
-              new ChoiceOption({
-                label: 'Clloverr', 
-                value: '2'
-               }),
-              new ChoiceOption({
-                label: 'Schwabba', 
-                value: '3'
-              }), 
-              new ChoiceOption({
-                label: 'Maverick', 
-                value: '4'
-              })
-            ]
           })
         ]
       }
