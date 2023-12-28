@@ -244,7 +244,7 @@
           new QuestionModel({
             id: 'html_1',
             title: 'First player to get Master crown?',
-            helpText: 'Master Crown = 1000 Wins',
+            helpText: '',
             type: QuestionType.MultipleChoice,
             required: true,
             multiple: false,
@@ -254,7 +254,7 @@
                 value: '1'
               }),
               new ChoiceOption({
-                label: 'Clover',
+                label: 'Cll0verr',
                 value: '2'
               }),
               new ChoiceOption({
@@ -388,7 +388,7 @@
                 value: '2'
               }),
               new ChoiceOption({
-                label: 'Intellectrick/Clover/Youpi ',
+                label: 'Intellectrick/Cll0verr/Youpi ',
                 value: '3'
               }),
               new ChoiceOption({
@@ -410,7 +410,7 @@
                 value: '1'
               }),
               new ChoiceOption({
-                label: 'Clover ',
+                label: 'Cll0verr ',
                 value: '2'
               }),
               new ChoiceOption({
@@ -503,7 +503,7 @@
           }),
           new QuestionModel({
             id: 'html_11',
-            title: 'Winner of one and only lucky Clover royal championship?',
+            title: 'Winner of one and only lucky Clover Royal Championship?',
             helpText: '',
             type: QuestionType.MultipleChoice,
             required: true,
