@@ -53,6 +53,16 @@
         <p class="text-success" v-if="submitted && score < 4">"You scored {{ score }} out of {{ total }}. There's a lot of room for improvement."</p>
         <p class="text-success" v-else-if="submitted && score < 7">"You scored {{ score }} out of {{ total }}. Not bad at all!"</p>
         <p class="text-success" v-else-if="submitted && score <= total">"You scored {{ score }} out of {{ total }}. Wow, that's impressive!"</p>
+
+        <!-- Display incorrect answers -->
+        <div v-if="submitted && Object.keys(incorrectAnswers).length > 0">
+      <p class="text-danger">Incorrect Answers:</p>
+        <ul>
+          <li v-for="questionId in incorrectAnswers" :key="questionId">
+            <strong>{{ getQuestionTitle(questionId) }}</strong> {{ incorrectAnswers[questionId] }}
+          </li>
+        </ul>
+      </div>
       </template>
     </flow-form>
   </div>
@@ -78,6 +88,7 @@
         total: 45, 
         time: 0,
         formattedTime: '',
+        incorrectAnswers: [],
         answers: {
           html_1: '3', // Founder of Royal Training Maps 
           html_2: '4', // Most likely your ex favorite Royal YouTuber 
@@ -916,23 +927,25 @@
             let answer = question.answer;
 
             if (typeof answer === 'string') {
-              // Text-based question
               let correctAnswers = this.answers[question.id];
 
-              // Check if the user's answer matches any of the correct variations
-              if (correctAnswers.includes(answer.trim())) {
-                this.score++;
+              if (!correctAnswers.includes(answer.trim())) {
+                this.incorrectAnswers.push(question.id);
               }
             } else if (typeof answer === 'object') {
-              // Multiple-choice question
               answer.sort((a, b) => a - b);
 
-              if (this.arrayEquals(answer, this.answers[question.id])) {
-                this.score++;
+              if (!this.arrayEquals(answer, this.answers[question.id])) {
+                this.incorrectAnswers.push(question.id);
               }
             }
           }
         });
+      },
+
+      getQuestionTitle(questionId) {
+        const question = this.questions.find(q => q.id === questionId);
+        return question ? question.title : '';
       },
 
       onQuizSubmit() {
