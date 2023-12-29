@@ -4,7 +4,7 @@
     <header class="vff-header">
       <div class="f-container">
         <!-- Add custom logo here -->
-        <p>Royal Quiz</p>
+        <img :src="require('@/assets/yaitstru.png')" alt="Yaitstru Image" style="width: 240px; height: 80px;"  />
       </div>
     </header>
 
@@ -49,11 +49,11 @@
             v-html="language.formatString(language.pressEnter)">
           </a>
         </div>
-        <p class="text-success" v-if="submitted && time">Your time: {{ formattedTime }}</p>
-        <p class="text-success" v-if="submitted && score < 4">"You scored {{ score }} out of {{ total }}. There's a lot of room for improvement."</p>
-        <p class="text-success" v-else-if="submitted && score < 7">"You scored {{ score }} out of {{ total }}. Not bad at all!"</p>
-        <p class="text-success" v-else-if="submitted && score <= total">"You scored {{ score }} out of {{ total }}. Wow, that's impressive!"</p>
-
+        <p class="text-success" v-if="submitted && score === 0">You scored 0 out of {{ total }}. Better luck next time!</p>
+        <p class="text-success" v-else-if="submitted && score < 4">You scored {{ score }} out of {{ total }}. There's a lot of room for improvement.</p>
+        <p class="text-success" v-else-if="submitted && score < 7">You scored {{ score }} out of {{ total }}. Not bad at all!</p>
+        <p class="text-success" v-else-if="submitted && score <= total">You scored {{ score }} out of {{ total }}. Wow, that's impressive!</p>
+        
         <!-- Display incorrect answers -->
         <div v-if="submitted && Object.keys(incorrectAnswers).length > 0">
       <p class="text-danger">Incorrect Answers:</p>
@@ -73,6 +73,7 @@
   import FlowForm from '../../src/components/FlowForm.vue'
   import QuestionModel, { QuestionType, ChoiceOption, LinkOption } from '../../src/models/QuestionModel'
   import LanguageModel from '../../src/models/LanguageModel'
+  import axios from 'axios'
   // If using the npm package, use the following line instead of the ones above.
   // import FlowForm, { QuestionModel, QuestionType, ChoiceOption, LanguageModel } from '@ditdot-dev/vue-flow-form'
   export default {
@@ -88,6 +89,7 @@
         total: 45, 
         time: 0,
         formattedTime: '',
+        userName: '',
         incorrectAnswers: [],
         answers: {
           html_1: '3', // Founder of Royal Training Maps 
@@ -106,13 +108,14 @@
           html_14: '2', // Royal mapper of the 2022 year 
           html_15: '3', // Royal photographer 
           question_16: [
-            "lucian____",
-            "lucian",
-            "Lucian",
+          "Lobster72",
+          "royallobster",
+          "Lobster",
+          "lobster",
+          "lobster72",
           ],
           question_17: [
-            "Dog..",
-            "Dog",
+          "Dog..", "Dog", "dog"
           ],
           question_18: [
             "Brimarine",
@@ -121,11 +124,11 @@
           question_19: [
             "yungweeb",
             "Yungweeb",
+            "weeb",
+            "Weeb"
           ],
           question_20: [
-            "Kelvawesome2070",
-            "kelvawesome2070",
-            "Kelvawesome",
+          "Kelvawesome2070", "kelvawesome2070", "Kelvawesome", "Kelv", "kelv"
           ],
           question_21: [
             "ya___",
@@ -133,53 +136,42 @@
             "ya",
           ],
           question_22: [
-            "Sombot",
-            "sombot",
+          "Sombot", "sombot", "Sombozz", "sombozz"
           ],
           question_23: [
-            "RafTorTV",
-            "raftortv",
-            "RafTor",
+          "RafTorTV", "raftortv", "RafTor", "raftor"
           ],
           question_24: [
-            "Tchak77",
-            "tchak77",
+          "Tchak77", "tchak77", "tchak", "Tchak"
           ],
           question_25: [
-            "Youpikaii",
-            "youpikaii",
+          "Youpikaii", "youpikaii", "youpi", "Youpi"
           ],
           question_26: [
-            "kickz21",
-            "Kickz21",
+          "kickz21", "Kickz21", "kickz", "Kickz"
           ],
           question_27: [
-            "TRASHER712",
-            "trasher712",
+          "TRASHER712", "trasher712", "Trasher", "trasher"
           ],
           question_28: [
-            "Rap10tor",
-            "rap10tor",
+          "Rap10tor", "rap10tor", "Rap10", "rap10"
           ],
           question_29: [
-            "YourOnlyHope7",
-            "youronlyhope7",
+          "YourOnlyHope7", "youronlyhope7", "Hope", "hope"
           ],
           question_30: [
-            "Raway..",
-            "raway",
+          "Raway..", "raway", "Raway", "raway.."
           ],
           question_31: [
-            "Moonub",
-            "moonub",
+          "Moonub", "moonub", "moo", "Moo"
           ],
           question_32: [
             "Surgetale",
             "surgetale",
+            "surge"
           ],
           question_33: [
-            "MrPaxi",
-            "mrpaxi",
+          "MrPaxii", "mrpaxii", "MrPaxii..","paxii", "mrpaxii.."
           ],
           question_34: [
             "YanMan",
@@ -198,36 +190,28 @@
             "mabiere",
           ],
           question_38: [
-            "Hayiom..",
-            "hayiom",
+          "Hayiom..", "hayiom", "hayiom.."
           ],
           question_39: [
-            "SkyRay746",
-            "skyray746",
+          "zayshaa", "Zayshaa", "zaysha", "Zaysha", "zay"
           ],
           question_40: [
-            "Baupro32",
-            "baupro32",
+          "Baupro32", "baupro32", "Baupro", "baupro"
           ],
           question_41: [
-            "LittleKryli___",
-            "littlekryli___",
+          "LittleKryli___", "littlekryli___", "kryli", "Kryli"
           ],
           question_42: [
-            "betabr",
-            "Betabr",
+          "betabr", "Betabr", "Beta", "beta"
           ],
           question_43: [
-            "Morgus_TM",
-            "morgus_tm",
+          "Morgus_TM", "morgus_tm", "Morgus", "morgus"
           ],
           question_44: [
-            "Ideallinie13",
-            "ideallinie13",
+          "Ideallinie13", "ideallinie13", "ideallinie", "Ideallinie"
           ],
           question_45: [
-            "Tona.",
-            "tona",
+          "Tona.", "tona", "Tona", "tona."
           ],
         },
         language: new LanguageModel(),
@@ -240,6 +224,13 @@
             content: 'Let\'s start with some multiple choice questoins',
             type: QuestionType.SectionBreak,
             required: true,
+          }),
+          new QuestionModel({
+            id: 'user_name',
+            title: 'What is your TM name?',
+            type: QuestionType.Text,
+            required: true,
+            placeholder: 'Type your name here...',
           }),
           new QuestionModel({
             id: 'html_1',
@@ -451,7 +442,7 @@
           }),
           new QuestionModel({
             id: 'html_9',
-            title: 'Person who owes most of the records on Royal maps?',
+            title: 'Person who owns the most records on Royal Training Maps?',
             helpText: '',
             type: QuestionType.MultipleChoice,
             required: true,
@@ -570,7 +561,7 @@
                 value: '2'
               }),
               new ChoiceOption({
-                label: 'Clover',
+                label: 'Cll0verr',
                 value: '3'
               }),
               new ChoiceOption({
@@ -588,7 +579,7 @@
             multiple: false,
             options: [
               new ChoiceOption({
-                label: 'Clover',
+                label: 'Cll0verr',
                 value: '1'
               }),
               new ChoiceOption({
@@ -632,14 +623,14 @@
             ]
           }),
           new QuestionModel({
-            title: 'Excellent! Now for this part you will type out your answers, don\'t stress about capitalization',
-            content: 'Names will not be used more than once, so if you have guessed someone already it will probably not be them if you are correct.',
+            title: 'Excellent! Now for this part you will type out your answers.',
+            content: '',
             type: QuestionType.SectionBreak
           }),
           new QuestionModel({
             id: 'question_16',
             tagline: '',
-            title: '4th place andy. Tchak\'s main simp.',
+            title: 'OG ice and bobsleigh mapper',
             type: QuestionType.Text,
             required: true,
             placeholder: 'Type your answer here...',
@@ -846,7 +837,7 @@
           new QuestionModel({
             id: 'question_39',
             tagline: '',
-            title: 'Prolific mapper with 1 SR win and 0 normal wins',
+            title: 'First woman to get master crown',
             type: QuestionType.Text,
             required: true,
             placeholder: 'Type your answer here...',
@@ -922,25 +913,41 @@
       },
 
       calculateScore() {
-        this.questions.forEach(question => {
+        this.score = 0; // Reset the score before calculating
+        this.incorrectAnswers = []; // Reset the incorrect answers array
+
+        this.questions.forEach((question) => {
           if (question.type !== QuestionType.SectionBreak) {
             let answer = question.answer;
+            let correctAnswer = this.answers[question.id];
 
-            if (typeof answer === 'string') {
-              let correctAnswers = this.answers[question.id];
-
-              if (!correctAnswers.includes(answer.trim())) {
+            if (Array.isArray(correctAnswer)) {
+              // Handle text/array questions
+              if (
+                !correctAnswer.some(
+                  (option) =>
+                    option && answer && option.toLowerCase().trim() === answer.toLowerCase().trim()
+                )
+              ) {
                 this.incorrectAnswers.push(question.id);
+              } else {
+                // Increment the score for correct answers
+                this.score++;
               }
-            } else if (typeof answer === 'object') {
-              answer.sort((a, b) => a - b);
-
-              if (!this.arrayEquals(answer, this.answers[question.id])) {
+            } else if (typeof answer === 'string' && typeof correctAnswer === 'string') {
+              // Handle multiple-choice questions
+              if (correctAnswer.trim() !== answer.trim()) {
                 this.incorrectAnswers.push(question.id);
+              } else {
+                // Increment the score for correct answers
+                this.score++;
               }
             }
           }
         });
+
+        console.log('Score:', this.score);
+        console.log('Incorrect Answers:', [...this.incorrectAnswers]);
       },
 
       getQuestionTitle(questionId) {
@@ -955,13 +962,35 @@
         
         this.submitted = true
         this.calculateScore()
+        // Store user's name
+        this.userName = this.questions.find(q => q.id === 'user_name').answer;
+          // Send results to FastAPI
+        this.sendResultsToFastAPI();
+      },
+
+      sendResultsToFastAPI() {
+        const quizResults = {
+          user_name: this.userName,
+          score: this.score,
+          incorrect_answers: this.incorrectAnswers, // Assuming this is an array of incorrect question IDs
+          // Add more properties as needed
+        };
+
+        // Use axios to send a POST request to the FastAPI endpoint
+        axios.post('https://royalquizapi-production.up.railway.app/submit-quiz-result/', quizResults)
+          .then(response => {
+            console.log(response.data.message);
+          })
+          .catch(error => {
+            console.error('Error submitting quiz result:', error);
+          });
+        }
       },
 
       onTimer(time, formattedTime) {
         this.time = formattedTime
         this.formattedTime = formattedTime
       }
-    },
   }
 </script>
 
