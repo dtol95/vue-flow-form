@@ -136,7 +136,10 @@
             "ya",
           ],
           question_22: [
-          "Sombot", "sombot", "Sombozz", "sombozz"
+            "Sombot",
+            "sombot",
+            "Sombozz",
+            "sombozz"
           ],
           question_23: [
           "RafTorTV", "raftortv", "RafTor", "raftor"
@@ -151,7 +154,7 @@
           "kickz21", "Kickz21", "kickz", "Kickz"
           ],
           question_27: [
-          "TRASHER712", "trasher712", "Trasher", "trasher"
+          "TRASHER172", "trasher172", "Trasher", "trasher", "trasher_172"
           ],
           question_28: [
           "Rap10tor", "rap10tor", "Rap10", "rap10"
