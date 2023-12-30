@@ -50,8 +50,8 @@
           </a>
         </div>
         <p class="text-success" v-if="submitted && score === 0">You scored 0 out of {{ total }}. Better luck next time!</p>
-        <p class="text-success" v-else-if="submitted && score < 4">You scored {{ score }} out of {{ total }}. There's a lot of room for improvement.</p>
-        <p class="text-success" v-else-if="submitted && score < 7">You scored {{ score }} out of {{ total }}. Not bad at all!</p>
+        <p class="text-success" v-else-if="submitted && score < 15">You scored {{ score }} out of {{ total }}. There's a lot of room for improvement.</p>
+        <p class="text-success" v-else-if="submitted && score < 30">You scored {{ score }} out of {{ total }}. Not bad at all!</p>
         <p class="text-success" v-else-if="submitted && score <= total">You scored {{ score }} out of {{ total }}. Wow, that's impressive!</p>
         
         <!-- Display incorrect answers -->
