@@ -977,7 +977,7 @@
         };
 
         // Use axios to send a POST request to the FastAPI endpoint
-        axios.post('https://royalquizapi-production.up.railway.app/submit-quiz-result/', data, {
+        axios.post('https://fastapi-production-95ad.up.railway.app/submit-quiz-result/', data, {
           withCredentials: true,
         })
           .then(response => {
