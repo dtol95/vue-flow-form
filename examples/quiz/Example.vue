@@ -221,7 +221,17 @@
             id: 'start',
             tagline: '45 questions',
             title: 'How much do you know about Royal?',
-            content: 'Let\'s start with some multiple choice questoins',
+            content: `
+              A few small hints to make this quiz more enjoyable:
+              Please use your Ubisoft nickname.
+              Avoid using profanity; we didn't include any 😉
+              Each name in the quiz can be a correct answer only once, so if you chose
+              a name in the first part, we didn't include it in the second.
+              We tried to provide multiple variations for each name, but if you're
+              unsure, check Trackmania.io to avoid losing the correct answer due to a
+              typo.
+              Have fun and good luck 💜
+            `,
             type: QuestionType.SectionBreak,
             required: true,
           }),
