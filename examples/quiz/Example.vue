@@ -270,7 +270,7 @@
           }),
           new QuestionModel({
             id: 'html_2',
-            title: 'Most likely your ex favorite Royal YouTuber?',
+            title: 'Most likely your ex-favorite Royal YouTuber?',
             helpText: '',
             type: QuestionType.MultipleChoice,
             required: true,
@@ -296,7 +296,7 @@
           }),
           new QuestionModel({
             id: 'html_3',
-            title: 'A legend of Royal Tutorials?',
+            title: 'Original legend of Royal Tutorials?',
             helpText: '',
             type: QuestionType.MultipleChoice,
             required: true,
@@ -348,7 +348,7 @@
           }),
           new QuestionModel({
             id: 'html_5',
-            title: 'Raced to be the first gold crown?',
+            title: 'Who raced to be the first gold crown?',
             helpText: '',
             type: QuestionType.MultipleChoice,
             required: true,
@@ -374,7 +374,7 @@
           }),
           new QuestionModel({
             id: 'html_6',
-            title: 'Team that won the most Super Royals?',
+            title: 'Which team won the most Super Royals?',
             helpText: '',
             type: QuestionType.MultipleChoice,
             required: true,
@@ -400,7 +400,7 @@
           }),
           new QuestionModel({
             id: 'html_7',
-            title: 'Player who failed his own map and didn\'t qualify for his team during RNC 3?',
+            title: 'Which player failed his own map and didn\'t qualify for his team during RNC 3?',
             helpText: '',
             type: QuestionType.MultipleChoice,
             required: true,
@@ -426,7 +426,7 @@
           }),
           new QuestionModel({
             id: 'html_8',
-            title: 'Event that never existed in Royal?',
+            title: 'Which event never existed in Royal?',
             helpText: '',
             type: QuestionType.MultipleChoice,
             required: true,
@@ -452,7 +452,7 @@
           }),
           new QuestionModel({
             id: 'html_9',
-            title: 'Person who owns the most records on Royal Training Maps?',
+            title: 'Who owns the most records on Royal Training Maps?',
             helpText: '',
             type: QuestionType.MultipleChoice,
             required: true,
@@ -478,7 +478,7 @@
           }),
           new QuestionModel({
             id: 'html_10',
-            title: 'The leading country in the number of records?',
+            title: 'Which country leads in the number of records?',
             helpText: '',
             type: QuestionType.MultipleChoice,
             required: true,
@@ -504,7 +504,7 @@
           }),
           new QuestionModel({
             id: 'html_11',
-            title: 'Winner of one and only lucky Clover Royal Championship?',
+            title: 'Who won the one and only Lucky Clover Royal Championship?',
             helpText: '',
             type: QuestionType.MultipleChoice,
             required: true,
@@ -530,7 +530,7 @@
           }),
           new QuestionModel({
             id: 'html_12',
-            title: 'Which team had won RNC?',
+            title: 'Which team has won RNC?',
             helpText: '',
             type: QuestionType.MultipleChoice,
             required: true,
@@ -556,7 +556,7 @@
           }),
           new QuestionModel({
             id: 'html_13',
-            title: 'Creator of Royal Rumble competition?',
+            title: 'Who is the creator of Royal Rumble competition?',
             helpText: '',
             type: QuestionType.MultipleChoice,
             required: true,
@@ -582,7 +582,7 @@
           }),
           new QuestionModel({
             id: 'html_14',
-            title: 'Royal mapper of the 2022 year?',
+            title:'Who was the Royal mapper of the year in 2022?',
             helpText: '',
             type: QuestionType.MultipleChoice,
             required: true,
@@ -676,7 +676,7 @@
           new QuestionModel({
             id: 'question_20',
             tagline: '',
-            title: 'First player to get the master crown fully on starter access',
+            title: 'First player to get their master crown fully on starter access',
             type: QuestionType.Text,
             required: true,
             placeholder: 'Type your answer here...',
